@@ -1,4 +1,11 @@
 // JS for booklist
+// Book Class: Represents a Book
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
 
 // Functions for local storage
 function getBooks() {
