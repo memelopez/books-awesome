@@ -58,6 +58,10 @@ function displayBooks() {
   books.forEach((book) => addBookToList(book));
 }
 
+function clearOut() {
+  document.querySelector('#book-title').value = '';
+  document.querySelector('#book-author').value = '';
+}
 
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', displayBooks());
@@ -73,8 +77,8 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   // Validate
   if (titleI === '' || authorI === '') {
-    console.log('Error: title and author must not be empty');
-  } else {
+    throw new Error('title and author must not be empty');
+  }else {
     const books = getBooks();
 
     books.push({
@@ -83,7 +87,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     });
 
     setBooks(books);
-
+    clearOut()
     // Reload page
     // eslint-disable-next-line no-restricted-globals
     location.reload();
