@@ -78,7 +78,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   // Validate
   if (titleI === '' || authorI === '') {
     throw new Error('title and author must not be empty');
-  }else {
+  } else {
     const books = getBooks();
 
     books.push({
@@ -87,7 +87,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     });
 
     setBooks(books);
-    clearOut()
+    clearOut();
     // Reload page
     // eslint-disable-next-line no-restricted-globals
     location.reload();
