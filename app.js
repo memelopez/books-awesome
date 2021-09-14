@@ -7,30 +7,32 @@ class Book {
   }
 }
 
-// Functions for local storage
-function getBooks() {
-  let books;
-  if (localStorage.getItem('books') === null) {
-    books = [];
-  } else {
-    books = JSON.parse(localStorage.getItem('books'));
+// Store Class: Handles Storage
+class Store {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
   }
 
-  return books;
-}
+  static setBooks(books) {
+    if (books.length > 0) {
+      localStorage.setItem('books', JSON.stringify(books));
+    }
+  }
 
-function setBooks(books) {
-  if (books.length > 0) {
+  static removeBook(index) {
+    const books = this.getBooks();
+
+    books.splice(index, 1);
+
     localStorage.setItem('books', JSON.stringify(books));
   }
-}
-
-function removeBook(index) {
-  const books = getBooks();
-
-  books.splice(index, 1);
-
-  localStorage.setItem('books', JSON.stringify(books));
 }
 
 // UI Class: Handle UI Tasks
@@ -61,7 +63,7 @@ function addBookToList(book) {
 
 function displayBooks() {
   // Gets booklist from local storage
-  const books = getBooks();
+  const books = Store.getBooks();
   books.forEach((book) => addBookToList(book));
 }
 
@@ -96,12 +98,12 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   if (titleI === '' || authorI === '') {
     showAlert('title and author must not be empty', 'success');
   } else {
-    const books = getBooks();
+    const books = Store.getBooks();
     books.push({
       title: titleI,
       author: authorI,
     });
-    setBooks(books);
+    Store.setBooks(books);
     clearOut();
     // Reload page
     // eslint-disable-next-line no-restricted-globals
@@ -120,7 +122,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   const index = nodes.indexOf(item2BeRemoved);
 
   if (classesArray.indexOf('rmv') !== -1) {
-    removeBook(index);
+    Store.removeBook(index);
 
     // Reload page
     // eslint-disable-next-line no-restricted-globals
