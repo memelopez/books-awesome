@@ -99,10 +99,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     showAlert('title and author must not be empty', 'success');
   } else {
     const books = Store.getBooks();
-    books.push({
-      title: titleI,
-      author: authorI,
-    });
+    const book = new Book(titleI, authorI);
+    books.push(book);
+
     Store.setBooks(books);
     clearOut();
     // Reload page
