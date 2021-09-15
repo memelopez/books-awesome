@@ -32,7 +32,6 @@ class Store {
   }
 }
 
-
 function clearOut() {
   document.querySelector('#book-title').value = '';
   document.querySelector('#book-author').value = '';
@@ -82,7 +81,6 @@ class UI {
   }
 }
 
-
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks());
 
@@ -104,7 +102,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     books.push(book); // push new book into books array
 
     Store.setBooks(books); // sets new books array in local storage
-    clearOut()
+    clearOut();
     // Reload page
     // eslint-disable-next-line no-restricted-globals
     location.reload();
