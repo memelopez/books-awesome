@@ -43,22 +43,17 @@ class UI {
     const list = document.querySelector('#book-list');
 
     const item = document.createElement('li');
-    item.className = 'd-flex flex-column border-bottom border-2 py-2';
+    item.className = 'd-flex justify-content-between py-2';
 
-    const pBook1 = document.createElement('p');
-    pBook1.textContent = book.title;
-    pBook1.className = 'py-1 m-0';
-
-    const pBook2 = document.createElement('p');
-    pBook2.textContent = book.author;
-    pBook2.className = 'py-1 m-0';
+    const pBook = document.createElement('p');
+    pBook.textContent = `"${book.title}" by ${book.author}`;
+    pBook.className = 'py-1 m-0';
 
     const pRmv = document.createElement('button');
     pRmv.textContent = 'Remove';
-    pRmv.className = 'py-1 m-0 rmv';
+    pRmv.className = 'py-1 m-0 rmv bg-dark text-white';
 
-    item.appendChild(pBook1);
-    item.appendChild(pBook2);
+    item.appendChild(pBook);
     item.appendChild(pRmv);
 
     list.appendChild(item);
