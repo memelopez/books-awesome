@@ -11,11 +11,21 @@
   <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js" defer></script>
 </head>
 <body>
+  <nav class="myNav navbar navbar-expand-lg navbar-dark bg-primary px-3 d-flex justify-content-between">
+    <h3 class="myTitle text-white m-0">Awesome Books</h3>
+    <div id="navLinks" class="navLinks d-flex justify-content-between">
+      <a id="listA" href="#" class="px-3 active">List</a>
+      <span>|</span>
+      <a id="formA" href="#" class="px-3 text-white">Add new</a>
+      <span>|</span>
+      <a id="contactA" href="#" class="px-3 text-white">Contact</a>
+    </div>
+  </nav>
   <div class="container-fluid">
     <div class="row">
       <div class="col-8 m-auto box">
         <div id="div4list">
-          <h2 class="text-primary text-center mt-4 mb-4">All Awesome Books</h2>
+          <h2 class="text-primary text-center my-3">All Awesome Books</h2>
           <ul id="book-list" class="book-list py-2 px-1 m-0 border border-3 border-dark"></ul>
         </div>
         <div id="div4form" class="mt-4 container-fluid">
