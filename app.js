@@ -1,3 +1,103 @@
+// FUNCTIONS
+function displayLuxonDate() {
+  // Display Date
+  /* eslint-disable */
+  const DateTime = luxon.DateTime;
+  /* eslint-enable */
+  const now = DateTime.now();
+  const dateText = now.toLocaleString(DateTime.DATETIME_MED);
+  const spanForText = document.querySelector('#luxonDate');
+  spanForText.textContent = dateText;
+}
+
+function displayList() {
+  const divList = document.querySelector('#div4list');
+  const divForm = document.querySelector('#div4form');
+  const divContact = document.querySelector('#div4contact');
+
+  // Remove d-none from divList in case it has it
+  const classesDiv = divList.className;
+  divList.className = classesDiv.replaceAll('d-none', '');
+
+  // Add d-none to divForm and divContact
+  divForm.classList.add('d-none');
+  divContact.classList.add('d-none');
+
+  // Change active link class
+  const listA = document.querySelector('#listA');
+  const formA = document.querySelector('#formA');
+  const contactA = document.querySelector('#contactA');
+
+  // Remove text-white for active class
+  let classesA = listA.className;
+  listA.className = classesA.replaceAll('text-white', 'active');
+
+  // Remove active class
+  classesA = formA.className;
+  formA.className = classesA.replaceAll('active', 'text-white');
+  classesA = contactA.className;
+  contactA.className = classesA.replaceAll('active', 'text-white');
+}
+
+function displayForm() {
+  const divList = document.querySelector('#div4list');
+  const divForm = document.querySelector('#div4form');
+  const divContact = document.querySelector('#div4contact');
+
+  // Remove d-none from divForm in case it has it
+  const classesDiv = divForm.className;
+  divForm.className = classesDiv.replaceAll('d-none', '');
+
+  // Add d-none to divList and divContact
+  divList.classList.add('d-none');
+  divContact.classList.add('d-none');
+
+  // Change active link class
+  const listA = document.querySelector('#listA');
+  const formA = document.querySelector('#formA');
+  const contactA = document.querySelector('#contactA');
+
+  // Remove text-white for active class
+  let classesA = formA.className;
+  formA.className = classesA.replaceAll('text-white', 'active');
+
+  // Remove active class
+  classesA = listA.className;
+  listA.className = classesA.replaceAll('active', 'text-white');
+  classesA = contactA.className;
+  contactA.className = classesA.replaceAll('active', 'text-white');
+}
+
+function displayContact() {
+  const divList = document.querySelector('#div4list');
+  const divForm = document.querySelector('#div4form');
+  const divContact = document.querySelector('#div4contact');
+
+  // Remove d-none from divContact in case it has it
+  const classesDiv = divContact.className;
+  divContact.className = classesDiv.replaceAll('d-none', '');
+
+  // Add d-none to divList and divContact
+  divList.classList.add('d-none');
+  divForm.classList.add('d-none');
+
+  // Change active link class
+  const listA = document.querySelector('#listA');
+  const formA = document.querySelector('#formA');
+  const contactA = document.querySelector('#contactA');
+
+  // Remove text-white for active class
+  let classesA = contactA.className;
+  contactA.className = classesA.replaceAll('text-white', 'active');
+
+  // Remove active class
+  classesA = listA.className;
+  listA.className = classesA.replaceAll('active', 'text-white');
+  classesA = formA.className;
+  formA.className = classesA.replaceAll('active', 'text-white');
+}
+
+// Classes
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -32,11 +132,6 @@ class Store {
   }
 }
 
-function clearOut() {
-  document.querySelector('#book-title').value = '';
-  document.querySelector('#book-author').value = '';
-}
-
 // UI Class: Handle UI Tasks
 class UI {
   static addBookToList(book) {
@@ -63,6 +158,12 @@ class UI {
     // Gets booklist from local storage
     const books = Store.getBooks();
     books.forEach((book) => this.addBookToList(book));
+
+    // display date
+    displayLuxonDate();
+
+    // show only list section
+    displayList();
   }
 
   static showAlert(message, className) {
@@ -97,7 +198,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     books.push(book); // push new book into books array
 
     Store.setBooks(books); // sets new books array in local storage
-    clearOut();
+
     // Reload page
     // eslint-disable-next-line no-restricted-globals
     location.reload();
@@ -121,4 +222,18 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
     // eslint-disable-next-line no-restricted-globals
     location.reload();
   }
+});
+
+// Event: show list
+document.querySelector('#listA').addEventListener('click', () => {
+  displayList();
+});
+
+// Event: show form
+document.querySelector('#formA').addEventListener('click', () => {
+  displayForm();
+});
+// Event: show list
+document.querySelector('#contactA').addEventListener('click', () => {
+  displayContact();
 });
