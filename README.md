@@ -4,7 +4,9 @@
 
 > An application of a book list.
 
-<img src="https://user-images.githubusercontent.com/6587226/133657922-dd981fec-bf51-46a2-9e4e-511004e63fc8.png" width="600">
+<img src="https://user-images.githubusercontent.com/6587226/133684884-1a1e669a-1164-4d55-ae97-1510cbe73b7f.png" width="600">
+<img src="https://user-images.githubusercontent.com/6587226/133684976-fa38b927-9ba4-408c-896c-bedaea3cd6b8.png" width="600">
+<img src="https://user-images.githubusercontent.com/6587226/133685035-4c3ddb1c-f15c-4c02-912b-b50ed8ac917b.png" width="600">
 
 
 Book list app. Capable of displaying the current book list, adding and removing books, and storing the list in local storage. 
@@ -14,7 +16,7 @@ Book list app. Capable of displaying the current book list, adding and removing 
 - HTML
 - JavaScript
 - Bootstap
-- Bootswatch litera theme
+- Bootswatch Flatty theme
 - CSS 
 
 ## Live Demo
