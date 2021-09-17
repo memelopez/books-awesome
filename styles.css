@@ -1,5 +1,9 @@
 body {
   background-color: seashell;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .rmv {
@@ -14,10 +18,15 @@ ul#book-list li:nth-child(odd) {
   text-decoration: none;
 }
 
-.myNav {
+.myNav,
+.myfoot {
   color: white;
 }
 
 #luxonDate {
   color: #13967d;
+}
+
+.myfoot {
+  margin-top: auto;
 }
