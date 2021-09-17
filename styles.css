@@ -6,6 +6,10 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+}
+
 .article {
   flex-grow: 1;
 }
@@ -25,10 +29,6 @@ ul#book-list li:nth-child(odd) {
 .myNav,
 .myfoot {
   color: white;
-}
-
-a {
-  text-decoration: none;
 }
 
 #navTitle {
