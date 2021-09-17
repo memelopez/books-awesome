@@ -179,6 +179,10 @@ class UI {
 
 // Event: on content load Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks());
+function clearOut() {
+  document.querySelector('#book-title').value = '';
+  document.querySelector('#book-author').value = '';
+}
 
 // Event: Add book
 document.querySelector('#book-form').addEventListener('submit', (e) => {
@@ -196,7 +200,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     const books = Store.getBooks(); // get books from local storage
     const book = new Book(titleI, authorI); // new instance of Book
     books.push(book); // push new book into books array
-
+    clearOut();
     Store.setBooks(books); // sets new books array in local storage
 
     // Reload page
