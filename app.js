@@ -1,19 +1,28 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-restricted-globals */
-function displayLuxonDate() {
+
+// Globals from the document
+
+const divList = document.querySelector('#div4list');
+const divForm = document.querySelector('#div4form');
+const divContact = document.querySelector('#div4contact');
+
+const listA = document.querySelector('#listA');
+const formA = document.querySelector('#formA');
+const contactA = document.querySelector('#contactA');
+
+// Funcitions
+
+const displayLuxonDate = () => {
   const DateTime = luxon.DateTime;
   const now = DateTime.now();
   const dateText = now.toLocaleString(DateTime.DATETIME_MED);
   const spanForText = document.querySelector('#luxonDate');
   spanForText.textContent = dateText;
-}
+};
 
-function displayList() {
-  const divList = document.querySelector('#div4list');
-  const divForm = document.querySelector('#div4form');
-  const divContact = document.querySelector('#div4contact');
-
+const displayList = () => {
   // Remove d-none from divList in case it has it
   const classesDiv = divList.className;
   divList.className = classesDiv.replaceAll('d-none', '');
@@ -21,11 +30,6 @@ function displayList() {
   // Add d-none to divForm and divContact
   divForm.classList.add('d-none');
   divContact.classList.add('d-none');
-
-  // Change active link class
-  const listA = document.querySelector('#listA');
-  const formA = document.querySelector('#formA');
-  const contactA = document.querySelector('#contactA');
 
   // Remove text-white for active class
   let classesA = listA.className;
@@ -36,13 +40,9 @@ function displayList() {
   formA.className = classesA.replaceAll('active', 'text-white');
   classesA = contactA.className;
   contactA.className = classesA.replaceAll('active', 'text-white');
-}
+};
 
-function displayForm() {
-  const divList = document.querySelector('#div4list');
-  const divForm = document.querySelector('#div4form');
-  const divContact = document.querySelector('#div4contact');
-
+const displayForm = () => {
   // Remove d-none from divForm in case it has it
   const classesDiv = divForm.className;
   divForm.className = classesDiv.replaceAll('d-none', '');
@@ -50,11 +50,6 @@ function displayForm() {
   // Add d-none to divList and divContact
   divList.classList.add('d-none');
   divContact.classList.add('d-none');
-
-  // Change active link class
-  const listA = document.querySelector('#listA');
-  const formA = document.querySelector('#formA');
-  const contactA = document.querySelector('#contactA');
 
   // Remove text-white for active class
   let classesA = formA.className;
@@ -65,13 +60,9 @@ function displayForm() {
   listA.className = classesA.replaceAll('active', 'text-white');
   classesA = contactA.className;
   contactA.className = classesA.replaceAll('active', 'text-white');
-}
+};
 
-function displayContact() {
-  const divList = document.querySelector('#div4list');
-  const divForm = document.querySelector('#div4form');
-  const divContact = document.querySelector('#div4contact');
-
+const displayContact = () => {
   // Remove d-none from divContact in case it has it
   const classesDiv = divContact.className;
   divContact.className = classesDiv.replaceAll('d-none', '');
@@ -79,11 +70,6 @@ function displayContact() {
   // Add d-none to divList and divContact
   divList.classList.add('d-none');
   divForm.classList.add('d-none');
-
-  // Change active link class
-  const listA = document.querySelector('#listA');
-  const formA = document.querySelector('#formA');
-  const contactA = document.querySelector('#contactA');
 
   // Remove text-white for active class
   let classesA = contactA.className;
@@ -94,9 +80,10 @@ function displayContact() {
   listA.className = classesA.replaceAll('active', 'text-white');
   classesA = formA.className;
   formA.className = classesA.replaceAll('active', 'text-white');
-}
+};
 
 // Classes
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -171,6 +158,7 @@ class UI {
   }
 }
 
+// EVENTS
 // Event: on content load Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks());
 function clearOut() {
@@ -180,7 +168,6 @@ function clearOut() {
 
 // Event: Add book
 document.querySelector('#book-form').addEventListener('submit', (e) => {
-  // Prevent actual submit
   e.preventDefault();
 
   // Get form values
@@ -191,11 +178,11 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   if (titleI === '' || authorI === '') {
     UI.showAlert('title and author must not be empty', 'success');
   } else {
-    const books = Store.getBooks(); // get books from local storage
-    const book = new Book(titleI, authorI); // new instance of Book
-    books.push(book); // push new book into books array
+    const books = Store.getBooks();
+    const book = new Book(titleI, authorI);
+    books.push(book);
     clearOut();
-    Store.setBooks(books); // sets new books array in local storage
+    Store.setBooks(books);
     location.reload();
   }
 });
