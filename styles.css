@@ -17,3 +17,7 @@ ul#book-list li:nth-child(odd) {
 .myNav {
   color: white;
 }
+
+#luxonDate{
+  color: #13967D;
+}
