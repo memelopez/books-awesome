@@ -32,6 +32,7 @@ function displayList() {
   let classesA = listA.className;
   listA.className = classesA.replaceAll('text-white', 'active');
 
+
   // Remove active class
   classesA = formA.className;
   formA.className = classesA.replaceAll('active', 'text-white');
@@ -179,6 +180,10 @@ class UI {
 
 // Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks());
+function clearOut() {
+  document.querySelector('#book-title').value = '';
+  document.querySelector('#book-author').value = '';
+}
 
 // Event: Add book
 document.querySelector('#book-form').addEventListener('submit', (e) => {
@@ -196,7 +201,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     const books = Store.getBooks(); // get books from local storage
     const book = new Book(titleI, authorI); // new instance of Book
     books.push(book); // push new book into books array
-
+    clearOut()
     Store.setBooks(books); // sets new books array in local storage
 
     // Reload page
