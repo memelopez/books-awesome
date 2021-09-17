@@ -17,3 +17,11 @@ ul#book-list li:nth-child(odd) {
 .myNav {
   color: white;
 }
+
+a {
+  text-decoration: none;
+}
+
+#navTitle {
+  text-decoration: none;
+}
