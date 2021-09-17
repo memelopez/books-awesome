@@ -1,9 +1,8 @@
-// FUNCTIONS
+/* eslint-disable no-undef */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-restricted-globals */
 function displayLuxonDate() {
-  // Display Date
-  /* eslint-disable */
   const DateTime = luxon.DateTime;
-  /* eslint-enable */
   const now = DateTime.now();
   const dateText = now.toLocaleString(DateTime.DATETIME_MED);
   const spanForText = document.querySelector('#luxonDate');
@@ -155,14 +154,9 @@ class UI {
   }
 
   static displayBooks() {
-    // Gets booklist from local storage
     const books = Store.getBooks();
     books.forEach((book) => this.addBookToList(book));
-
-    // display date
     displayLuxonDate();
-
-    // show only list section
     displayList();
   }
 
@@ -202,9 +196,6 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
     books.push(book); // push new book into books array
     clearOut();
     Store.setBooks(books); // sets new books array in local storage
-
-    // Reload page
-    // eslint-disable-next-line no-restricted-globals
     location.reload();
   }
 });
@@ -221,9 +212,6 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
 
   if (classesArray.indexOf('rmv') !== -1) {
     Store.removeBook(index);
-
-    // Reload page
-    // eslint-disable-next-line no-restricted-globals
     location.reload();
   }
 });
@@ -244,7 +232,5 @@ document.querySelector('#contactA').addEventListener('click', () => {
 
 // Event: clicks title anchor in navbar
 document.querySelector('#navTitle').addEventListener('click', () => {
-  // Reload page
-  // eslint-disable-next-line no-restricted-globals
   location.reload();
 });
