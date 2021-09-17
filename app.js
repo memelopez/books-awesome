@@ -9,11 +9,11 @@ function displayLuxonDate() {
   spanForText.textContent = dateText;
 }
 
-function displayList() {
-  const divList = document.querySelector('#div4list');
-  const divForm = document.querySelector('#div4form');
-  const divContact = document.querySelector('#div4contact');
+const divList = document.querySelector('#div4list');
+const divForm = document.querySelector('#div4form');
+const divContact = document.querySelector('#div4contact');
 
+function displayList() {
   // Remove d-none from divList in case it has it
   const classesDiv = divList.className;
   divList.className = classesDiv.replaceAll('d-none', '');
@@ -39,10 +39,6 @@ function displayList() {
 }
 
 function displayForm() {
-  const divList = document.querySelector('#div4list');
-  const divForm = document.querySelector('#div4form');
-  const divContact = document.querySelector('#div4contact');
-
   // Remove d-none from divForm in case it has it
   const classesDiv = divForm.className;
   divForm.className = classesDiv.replaceAll('d-none', '');
@@ -68,10 +64,6 @@ function displayForm() {
 }
 
 function displayContact() {
-  const divList = document.querySelector('#div4list');
-  const divForm = document.querySelector('#div4form');
-  const divContact = document.querySelector('#div4contact');
-
   // Remove d-none from divContact in case it has it
   const classesDiv = divContact.className;
   divContact.className = classesDiv.replaceAll('d-none', '');
