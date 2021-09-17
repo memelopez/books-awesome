@@ -8,14 +8,27 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
   <script src="app.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
 </head>
 <body>
-  <div class="container-fluid">
+  <nav class="myNav navbar navbar-expand-lg navbar-dark bg-primary px-3 d-flex justify-content-between">
+    <a id="navTitle" href="#"><h3 class="myTitle text-white m-0 text-decoration-none">Awesome Books</h3></a>
+    <div id="navLinks" class="navLinks d-flex justify-content-between">
+      <a id="listA" href="#" class="px-3 text-white">List</a>
+      <span>|</span>
+      <a id="formA" href="#" class="px-3 text-white">Add new</a>
+      <span>|</span>
+      <a id="contactA" href="#" class="px-3 text-white">Contact</a>
+    </div>
+  </nav>
+  <div class="container-fluid article">
+    <div class="container-fluid d-flex justify-content-end pt-2">
+      <span id="luxonDate" class=""></span>
+    </div>
     <div class="row">
       <div class="col-8 m-auto box">
         <div id="div4list">
-          <h2 class="text-primary text-center mt-4 mb-4">All Awesome Books</h2>
+          <h2 class="text-primary text-center my-3">All Awesome Books</h2>
           <ul id="book-list" class="book-list py-2 px-1 m-0 border border-3 border-dark"></ul>
         </div>
         <div id="div4form" class="mt-4 container-fluid">
@@ -30,8 +43,31 @@
             </div>
           </div>
         </div>
+        <div id="div4contact" class="row justify-content-center">
+          <div class="col-6">
+            <h4 class="text-center">Contact Information</h4>
+            <p class="text-center">Do you have any questions or you want to say "Hello"?
+              You can reah out to us!
+            </p>
+            <ul>
+              <li>
+                <p>Our email: mail@mail.com</p>
+              </li>
+              <li>
+                <p>Our phone number: 0043586534422</p>
+              </li>
+              <li>
+                <p>Our address: Streetname 22, 84503 City, Country</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+    
   </div> 
+  <footer class="myfoot bg-primary p-2 mt-5 ">
+      <p class="m-2">copyright &copy; 2021, All Rights Reserved</p>
+  </footer>
 </body>
 </html>

@@ -1,5 +1,17 @@
 body {
   background-color: seashell;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+.article {
+  flex-grow: 1;
 }
 
 .rmv {
@@ -8,4 +20,21 @@ body {
 
 ul#book-list li:nth-child(odd) {
   background-color: rgb(241, 241, 241);
+}
+
+.navLinks a {
+  text-decoration: none;
+}
+
+.myNav,
+.myfoot {
+  color: white;
+}
+
+#navTitle {
+  text-decoration: none;
+}
+
+#luxonDate {
+  color: #13967d;
 }
