@@ -6,6 +6,10 @@ body {
   flex-direction: column;
 }
 
+.article {
+  flex-grow: 1;
+}
+
 .rmv {
   width: 20%;
 }
@@ -25,8 +29,4 @@ ul#book-list li:nth-child(odd) {
 
 #luxonDate {
   color: #13967d;
-}
-
-.myfoot {
-  margin-top: auto;
 }
