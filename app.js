@@ -242,3 +242,10 @@ document.querySelector('#formA').addEventListener('click', () => {
 document.querySelector('#contactA').addEventListener('click', () => {
   displayContact();
 });
+
+// Event: clicks title anchor in navbar
+document.querySelector('#navTitle').addEventListener('click', () => {
+  // Reload page
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
+});
