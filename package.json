@@ -4,7 +4,8 @@
   "description": "a basic website that allows users to add/remove books from a list.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylint": "npx stylelint \"**/*.{css,scss}\" --fix"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
+  },
+  "dependencies": {
+    "luxon": "^2.3.0"
   }
 }
