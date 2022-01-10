@@ -6,7 +6,6 @@ export default class Store {
     } else {
       books = JSON.parse(localStorage.getItem('books'));
     }
-
     return books;
   }
 
@@ -18,9 +17,7 @@ export default class Store {
 
   static removeBook(index) {
     const books = this.getBooks();
-
     books.splice(index, 1);
-
     localStorage.setItem('books', JSON.stringify(books));
   }
 }
