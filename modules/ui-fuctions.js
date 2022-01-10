@@ -6,6 +6,14 @@ const listA = document.querySelector('#listA');
 const formA = document.querySelector('#formA');
 const contactA = document.querySelector('#contactA');
 
+const displayLuxonDate = () => {
+  const DateTime = luxon.DateTime;
+  const now = DateTime.now();
+  const dateText = now.toLocaleString(DateTime.DATETIME_MED);
+  const spanForText = document.querySelector('#luxonDate');
+  spanForText.textContent = dateText;
+};
+
 const displayList = () => {
     // Remove d-none from divList in case it has it
     const classesDiv = divList.className;
@@ -66,4 +74,4 @@ const displayList = () => {
     formA.className = classesA.replaceAll('active', 'text-white');
   };
 
-  export { displayContact, displayList, displayForm };
+  export { displayContact, displayList, displayForm, displayLuxonDate };

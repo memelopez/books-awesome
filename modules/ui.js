@@ -1,14 +1,8 @@
 import Store from './store.js';
-import {displayList} from './ui-fuctions.js';
+import {displayList, displayLuxonDate} from './ui-fuctions.js';
 // UI Class: Handle UI Tasks
 
-const displayLuxonDate = () => {
-  const DateTime = luxon.DateTime;
-  const now = DateTime.now();
-  const dateText = now.toLocaleString(DateTime.DATETIME_MED);
-  const spanForText = document.querySelector('#luxonDate');
-  spanForText.textContent = dateText;
-};
+
 
 export default class UI {
   static addBookToList(book) {
