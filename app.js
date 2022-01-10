@@ -1,6 +1,10 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-restricted-globals */
+import Book from './modules/book.js';
+import Store from './modules/store.js';
+import UI from './modules/ui.js';
+import {displayContact, displayList, displayForm } from './modules/ui-fuctions.js';
 
 // Globals from the document
 
@@ -11,10 +15,6 @@ const divContact = document.querySelector('#div4contact');
 const listA = document.querySelector('#listA');
 const formA = document.querySelector('#formA');
 const contactA = document.querySelector('#contactA');
-
-import Book from './modules/book.js';
-import Store from './modules/store.js';
-import UI from './modules/ui.js';
 
 // EVENTS
 // Event: on content load Display Books
