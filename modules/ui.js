@@ -1,8 +1,8 @@
+/* eslint-disable import/extensions */
+
 import Store from './store.js';
-import {displayList, displayLuxonDate} from './ui-fuctions.js';
+import { displayList, displayLuxonDate } from './ui-fuctions.js';
 // UI Class: Handle UI Tasks
-
-
 
 export default class UI {
   static addBookToList(book) {
